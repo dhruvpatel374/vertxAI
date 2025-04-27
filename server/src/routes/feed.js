@@ -68,7 +68,7 @@ feedRouter.get("/:id/share", authMiddleware, async (req, res) => {
       return res.status(404).json({ message: "Post not found" });
     }
     const user = req.user;
-    const shareLink = `https://yourapp.com/post/${post._id}`;
+    const shareLink = `https://vertx-ai.vercel.app/${post._id}`;
     const hasShared = user.recentActivity.some(
       (activity) => activity.action === `Shared post: ${post._id}`
     );
